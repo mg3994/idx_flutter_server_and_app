@@ -13,6 +13,7 @@ void main(List<String> arguments) async {
   // Extract the port and host values from parsed arguments
   var port = int.parse(results['port']);
   var host = results['host'];
+  
 
   // Bind the server to the specified host and port
   var server = await HttpServer.bind(host, port);
@@ -26,7 +27,7 @@ void main(List<String> arguments) async {
     // request.response.headers.set('Content-Type', 'text/plain');
 
     // Write a response to the client
-    request.response.write('Hello, world! : Listing on http://$host:$port');
+    request.response.write('Hello, world! : Listing on http://$host:$port' '\n'  "https://$port-${Platform.environment['WEB_HOST']}" );
     await request.response.close();
   }
 }
