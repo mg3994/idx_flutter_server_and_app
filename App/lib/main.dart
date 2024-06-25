@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final httpClient = HttpClient();
 
   try {
-    final request = await httpClient.getUrl(Uri.parse(url))..headers.set('Authorization', 'Bearer $access_token');
+    final request = await httpClient.getUrl(Uri.parse(url))..headers.set('Authorization', 'Bearer $access_token'); //or try=> ..headers.add(HttpHeaders.cookieHeader, 'WorkstationJwt=$access_token');
     final response = await request.close();
     
     if (response.statusCode == HttpStatus.ok) {
